@@ -10,10 +10,10 @@ const rateLimit = require('express-rate-limit');
 const { body, check, validationResult } = require('express-validator');
 
 // CORS variables
-const isProduction = process.env.NODE_ENV === 'production';
-const origin = {
-    origin: isProduction ? 'https://first-node-nikoapi.herokuapp.com/books' : '*'
-}
+// const isProduction = process.env.NODE_ENV === 'production';
+// const origin = {
+//     origin: isProduction ? 'https://first-node-nikoapi.herokuapp.com/books' : '*'
+// }
 
 // Rate limiting to protect against bruteforce/DDoS attacks
 const limiter = rateLimit({
@@ -32,7 +32,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 // Set up CORS with variables above
-app.use(cors(origin));
+// app.use(cors(origin));
+app.use(cors());
 
 // For production
 app.use(compression());

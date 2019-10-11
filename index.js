@@ -12,7 +12,7 @@ const { body, check, validationResult } = require('express-validator');
 // CORS variables
 const isProduction = process.env.NODE_ENV === 'production';
 const origin = {
-    origin: isProduction ? 'https://first-node-nikoapi.herokuapp.com' : '*'
+    origin: isProduction ? 'https://first-node-nikoapi.herokuapp.com/books' : '*'
 }
 
 // Rate limiting to protect against bruteforce/DDoS attacks
